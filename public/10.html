@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		p.s1 {
+			color:red;
+		}
+		
+		p.s2 {
+			color:blue;
+		}
+	</style>
+	
+	<script>
+		function changeRed() {
+			document.getElementById("p1").style.color = "red";
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Global Attributes</h1>
+	<a href="http://google.com/" accesskey="g">Press Alt+G to go to Google!</a>
+	<br>
+	<a href="http://facebook.com/" accesskey="b">Press Alt+B to go to Facebook!</a>
+	
+	<p class="s1">When a family cat died in ancient Egpyt, family members would shave 
+		off their eyebrows to mourn.</p>
+	
+	<p class="s2">They would then mummify the cat and bury it in a family tomb.</p>
+	<p contenteditable="true">Black cats are bad luck in the United States, but they 
+		are good luck in the United Kingdom and Australia. By the way, this paragraph 
+		is editable.</p>
+	
+	<p dir="ltr">Cats can walk from left to right!</p>
+	<p dir="rtl">Cats can also walk from right to left!</p>
+	
+	<p hidden>This paragraph is hidden.</p>
+	<p>This paragraph is not hidden.</p>
+	
+	<p id="p1">Have you ever seen a red cat before?</p>
+	<button type="button" onClick="changeRed()">Make the text become red!</button>
+	
+	<p lang="en">People in the UK love cats.</p>
+	<p lang="fr">Les gens en france aiment les chats.</p>
+	
+	<p contenteditable="true" spellcheck="true">Can you spell the Eurasian Lynx?</p>
+	
+	<p style="font-size:20px;text-align:center;color:blue;">
+		When your cat brings home a dead mouse or bird, 
+		it may do so to show you that you suck at hunting.
+	</p>
+	
+	<h2>Some more cat websites!</h2>
+	<a href="http://lovemeow.com/" tabindex="1">Love Meow Website</a>
+	<a href="http://catster.com/" tabindex="2">Catster Website</a>
+	<a href="http://thecatsite.com/" tabindex="3">Thecatsite Website</a>
+	
+	<p title="19 kittens!">How many kittens was in the largest litter? Hover over for the answer.</p>
+	
+	<p translate="no">Cats have inferior daytime sight, but during the night they need seven times less light than humans to see.</p>
+	
+</body>
+
+</html>
