@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>HTML Embedded Content</title>
+    </head>
+<main>
+    
+    <h1> Embedded Content </h1>
+    
+    <p>Super Cute Kitten!!</p>
+    <figure>
+    <img src="http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg" 
+         alt="little kitty" width="300" height="200">
+    <figcaption>I named her Lynley</figcaption>
+    </figure>
+    
+    <h3>Broken Link</h3>
+    <p>Another Super Cute Kitten!!</p>
+    <img src="http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cup-depressed-cat.jpg" 
+         alt="little kitty" width="300" height="200">
+    <p>Just kidding the link didn't work :/</p>
+    
+    <h3>Embed within line</h3>
+    <p> But boyyyy do I <img src="https://openclipart.org/image/2400px/svg_to_png/213889/1423475049.png" 
+                             alt="love" width="30" height="30"> cats!</p>
+    
+    <h3>Image Map</h3>
+    <p> Try clicking on his cute little paw!!! </p>
+    <p><img src="https://www.rd.com/wp-content/uploads/sites/2/2016/02/06-train-cat-shake-hands.jpg" 
+            width="350" alt="Kitty Shaking Hands" height="350" usemap="#Kitty">
+
+        <map name="Kitty"> 
+        <area shape="circle" coords="300,150,60" 
+              href="https://www.rd.com/advice/pets/how-to-train-a-cat/" alt="Train your kitten to shake here">
+    </p>
+    
+    <div id="pics"></div>
+    
+    <h3>Image Types</h3>
+    <p> Jpeg and png already tested, heres gif and svg  </p>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Cat_black.svg" 
+            alt="black cat svg" width="200" height="200"></p>
+    <p><img src="https://www.catgifpage.com/gifs/318.gif" 
+            alt="hella funny gif of chubby kitty"></p>
+    
+    <h3>iFrames</h3>
+    <p><iframe sandbox="allow-same-origin allow-forms allow-scripts"
+               src="https://www.youtube.com/watch?v=tntOCGkgt98" width="400" height="400"></iframe></p>
+    
+    <h3>Video and Audio</h3>
+    <p><video width="400" preload controls autoplay loop>
+        <source src="gs://html-tag-exploration.appspot.com/videoplayback.mp4" type="video/mp4">
+    </video></p>
+    <p> A cat meooowww</p>
+    <p><audio controls preload autoplay loop>
+        <source src="gs://html-tag-exploration.appspot.com/Cat_Meow.mp3" type="audio/mpeg">   
+        </audio></p>
+    
+    <h3>Watch me do some kitty math (MathML)</h3>
+    <p>
+      <math>
+        <mi>kitty</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>daddy cat</mi>
+            <mo>x</mo>
+            <mi>mommy cat</mi>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>    
+    
+    <h3>SVG</h3>
+    <svg height="130" width="500">
+        <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+        </defs>
+    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+    <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">CATS</text>
+</svg>
+    
+ </main>
+
+</html>
