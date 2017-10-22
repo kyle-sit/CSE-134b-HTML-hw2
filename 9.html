@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<h1>Scripts</h1>
+
+<p id="p1">
+I've read articles where you've said cats think of us as big, stupid cats. Is that accurate?
+
+No. In the book [I say] that cats behave toward us in a way that's indistinguishable from [how] they would act toward other cats. They do think we're clumsy: Not many cats trip over people, but we trip over cats.
+
+But I don't think they think of us as being dumb and stupid, since cats don't rub on another cat that's inferior to them.
+</p>
+
+<script>
+	function changeColor() {
+		document.getElementById("p1").style.fontSize = "40px";
+		document.getElementById("p1").style.color = "blue";
+		document.getElementById("p1").style.backgroundColor = "grey";
+	}
+	
+	function useTemplate() {
+		var t1 = document.getElementById("t1");
+		var p1 = document.getElementById("p1");
+		var clone = t1.content.cloneNode(true);
+		p1.appendChild(clone);
+	}
+	
+	function drawCat() {
+		var canvas = document.getElementById("c1");
+		var ctx = canvas.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(250,250,100,0,2*Math.PI);
+		ctx.stroke();
+		
+		ctx.moveTo(150,200);
+		ctx.lineTo(250,200);
+		ctx.lineTo(200, 113.4);
+		ctx.lineTo(150,200);
+		ctx.stroke();
+		
+		ctx.moveTo(250,200);
+		ctx.lineTo(350,200);
+		ctx.lineTo(300, 113.4);
+		ctx.lineTo(250,200);
+		ctx.stroke();
+		ctx.closePath();
+		
+		ctx.beginPath();
+		ctx.arc(200,250,20,0,2*Math.PI);
+		ctx.stroke();
+		ctx.closePath();
+		
+		ctx.beginPath();
+		ctx.arc(300,250,20,0,2*Math.PI);
+		ctx.stroke();
+		
+		ctx.moveTo(235,275);
+		ctx.lineTo(265,275);
+		ctx.lineTo(250,301);
+		ctx.lineTo(235,275);
+		ctx.moveTo(250,301);
+		ctx.lineTo(210,325);
+		ctx.moveTo(250,301);
+		ctx.lineTo(290,325);
+		ctx.stroke();
+		
+	}
+</script>
+<noscript>Error: Your browser does not support JavaScript.</noscript>
+
+<template id="t1">
+	<p>MeowMeowMeowMeowMeowMeowMeow! MeowMeowMeowMeowMeowMeowMeow!</p>
+</template>
+
+<button type="button" onClick="changeColor()">Add Styles</button>
+<button type="button" onClick="useTemplate()">What does the cat say??</button>
+<button type="button" onClick="drawCat()">Draw Cat</button>
+<br>
+<br>
+
+<canvas id="c1" width="500" height="500" style="border:1px solid #000000;">
+</canvas>
+
+
+
+
+</html>
