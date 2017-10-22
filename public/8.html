@@ -9,44 +9,44 @@
 <br>
   <h4>Stuff About Your Cat</h4>
   <form method="post" name="catinfo-form" target="_self" enctype="application/x-www-form-urlencoded">
-  	  Cat Breed:<input type="text" name="breed" autocomplete="on" form="catname-form" formmethod="get" placeholder="Cat Breed"><br>
-  	  Cat Age:<input type="number" name="age" max="50" form="catinfo-form"><br>
-  	  Cat Birthday:<input type="date" name="bday" max="2017-10-22"><br> <!-- fix max -->
-  	  Upload Image of Cat:<imput type="image" accept="jpg" name="catimg"><br>
-  	  Are you a cat?<input type="checkbox" required="required"><br>
-  	  How many cats do you want to have?<input type="number" min="100" value="100"><br>
-  	  Would you rather have a cat or a dog? <input type="text" value="cat" readonly><br>
-  	  Do you love your cat?<br>
-  	    <input id="cat-yes" type="checkbox" checked="checked">
-  	    <label for="cat-yes" form="catinfo-form">Yes</label><br>
-  	    <input id="cat-no" type="checkbox">
-  	    <label for="cat-no" form="catinfo-form">No<label><br>
+      Cat Breed:<input type="text" name="breed" autocomplete="on" form="catname-form" formmethod="get" placeholder="Cat Breed"><br>
+      Cat Age:<input type="number" name="age" max="50" form="catinfo-form"><br>
+      Cat Birthday:<input type="date" name="bday" max="2017-10-22"><br> <!-- fix max -->
+      Upload Image of Cat:<imput type="image" accept="jpg" name="catimg"><br>
+      Are you a cat?<input type="checkbox" required="required"><br>
+      How many cats do you want to have?<input type="number" min="100" value="100"><br>
+      Would you rather have a cat or a dog? <input type="text" value="cat" readonly><br>
+      Do you love your cat?<br>
+        <input id="cat-yes" type="checkbox" checked="checked">
+        <label for="cat-yes" form="catinfo-form">Yes</label><br>
+        <input id="cat-no" type="checkbox">
+        <label for="cat-no" form="catinfo-form">No<label><br>
       Do you REALLY love your cat?<br>
         <input id="cat-radio-yes" type="radio" name="cat-radio">
         <label for="cat-radio-yes" form="catinfo-form">REALLY yes</label>
         <input id="cat-radio-no" type="radio" name="cat-radio">
         <label for="cat-radio-no" form="catinfo-form">REALLY still yes</label><br>
-  	Dog name:<input type="text"  disabled="disabled"><br>
-  	Is this cat cute?<br>
-  	  <img src="134b/funnycat.jpg"><br>
-  	  <select size="4" name="catcute" required="required" form="catinfo-form">
-  	  	<option value="yes" selected>duh</option>
-  	  	<option value="no" disabled>ew</option>
-  	  	<option values="dogs" label="i luv dogs">cats just really aren't my thing</option>
-  	  	<option value="maybe">idk</option>
-  	  	<option value="decline">no comment</option>
-  	  </select><br>
-  	  Why do you love your cat?<br>
-  	    <textarea form="catinfo-form" cols="100" rows="10" placeholder="I really love when my cat scrathes my furniture"> </textarea><br>
-  	  What do you hate about your cat?<br>
-  	    <textarea form="catinfo-form" cols="100" rows="10" placeholder="Nothing" readonly></textarea><br>
+    Dog name:<input type="text"  disabled="disabled"><br>
+    Is this cat cute?<br>
+      <img src="img/funnycat.jpg"><br>
+      <select size="4" name="catcute" required="required" form="catinfo-form">
+        <option value="yes" selected>duh</option>
+        <option value="no" disabled>ew</option>
+        <option values="dogs" label="i luv dogs">cats just really aren't my thing</option>
+        <option value="maybe">idk</option>
+        <option value="decline">no comment</option>
+      </select><br>
+      Why do you love your cat?<br>
+        <textarea form="catinfo-form" cols="100" rows="10" placeholder="I really love when my cat scrathes my furniture"> </textarea><br>
+      What do you hate about your cat?<br>
+        <textarea form="catinfo-form" cols="100" rows="10" placeholder="Nothing" readonly></textarea><br>
 
 
  
-  	<button type="submit" value="Submit">Submit</button>
-  	<button type="button">MEOW</button>
-  	<button type="reset" name="resetbutton">Clear</button>
-  	<button type="button" disabled>WOOF</button>
+    <button type="submit" value="Submit">Submit</button>
+    <button type="button">MEOW</button>
+    <button type="reset" name="resetbutton">Clear</button>
+    <button type="button" disabled>WOOF</button>
 
   </form>
   <form>
@@ -62,7 +62,15 @@
     </fieldset>
     <fieldset>
       <legend>Other cat stuff</legend>
-      Favorite cat food: <input type="text">
+      Favorite cat food: 
+      <select>
+        <optgroup label="Wet Food">
+          <option>Fancy Feast</option>
+        </optgroup>
+        <optgroup label="Dry Food">
+          <option>Pedigree</option>
+        </optgroup>
+      </select> 
     </fieldset>
     <fieldset disabled>
       <legend>Dog stuff (disabled because not cats)</legend>
