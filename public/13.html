@@ -9,42 +9,45 @@
 
 <h1>Team Findings</h1>
 
-	<pre>
-Note on onkeypress: Note: The onkeypress event is not fired for all keys (e.g. ALT, CTRL, SHIFT, ESC) in all browsers. To detect only whether the user has pressed a key, use the onkeydown event instead, because it works for all keys.
-
-Also, holding a key down triggers onkeydown rather than onkeypress. If anything, would think for one key hold, it would be one onkeydown event, one onkeyup event, and many onkeypress events in between.
-
-Onmouseout vs. onmouseleave
+	<ol>
+<li>Note on onkeypress: Note: The onkeypress event is not fired for all keys (e.g. ALT, CTRL, SHIFT, ESC) in all browsers. To detect only whether the user has pressed a key, use the onkeydown event instead, because it works for all keys.
+</li>
+<li>Also, holding a key down triggers onkeydown rather than onkeypress. If anything, would think for one key hold, it would be one onkeydown event, one onkeyup event, and many onkeypress events in between.
+</li>
+<li>Onmouseout vs. onmouseleave
 Onmouseout works when you mouse off of the element or its child elements but onmouseleave is only fired when you mouse off of the attributed element
-
-onmousewheel
+</li>
+<li>onmousewheel
 Deprecated. The onmousewheel attribute is deprecated, you should use the onwheel attribute instead 
-
-GET vs. POST
+</li>
+<li>GET vs. POST
 When creating forms, we realized that there was 2 ways to collect the form information. ‘Get’ will store all the data in the URL of the page, while ‘post’ will request a web server to accept the data. ‘Post’ would likely be better if the data is not supposed to be public.
-
-Styling elements
+</li>
+<li>Styling elements
 I realized that you can add styles within an HTML document to change the appearance of elements without adding an external CSS document. Elements will typically have many different styling attributes.
-
-'pre' tag
+</li>
+<li>'pre' tag
 Usually HTML will ignore spacing like newlines and tabs, but I learned that the 'pre' tag in HTML will assume that the text is preformatted and leave the spacing in its original form.
-
-'ruby' tag
+</li>
+<li>'ruby' tag
 I learned that you can use foreign characters with the 'ruby' tag in HTML. It is useful because it will preserve the correct format associated with those characters (Arabic, Chinese, etc.)
+</li>
+<li>For certain browsers (Chrome), the 'embed' and 'iframe' tags do not work.
+</li>
 
-For certain browsers (Chrome), the 'embed' and 'iframe' tags do not work.
 
-
-
-
+<li>
 http://xahlee.info/js/html5_non-closing_tag.html 
 Is the Ending Slash Optional?
 HTML5: the slash is optional.
 HTML4: the slash is technically invalid. However, it's accepted by W3C's HTML validator.
 XHTML: The slash is REQUIRED.
 I recommend to always add the slash. Because, it provides a visual clue of non-closing tags. It's also convenient if you write simple script to check your HTML, without a lookup table or using heavy HTML parser.
-
-	</pre>
+</li>
+	</ol>
+	
+<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhtml-tag-exploration.firebaseapp.com%2F13.html">w3 validator</a>	
+	
 </body>
 
 </html>
