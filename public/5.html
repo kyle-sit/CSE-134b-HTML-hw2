@@ -45,20 +45,21 @@
     <p><img src="https://www.catgifpage.com/gifs/318.gif" 
             alt="hella funny gif of chubby kitty"></p>
     
-    <h3>iFrames</h3>
+    <h3>iFrames</h3> <!-- youtube and web pages won't load-->
     <p><iframe sandbox="allow-same-origin allow-forms allow-scripts"
                src="https://html-tag-exploration.firebaseapp.com/videoplayback.mp4" width="400" height="400"></iframe></p>
     
-    <h3>Embed</h3> <!--Same video because youtube isn't working-->
+    <h3>Embed</h3> <!--Can't get youtube or local video to load-->
     <embed src="https://html-tag-exploration.firebaseapp.com/videoplayback.mp4">
                
-    <h3>Objects</h3> <!--Same video because youtube and other files aren't working-->
+    <h3>Objects</h3> <!--Can't get youtube or local video to load-->
     <object width="400" height="400" data="https://html-tag-exploration.firebaseapp.com/videoplayback.mp4"></object>
     
     <h3>Video and Audio</h3>
     <p><video width="400" preload controls autoplay loop>
         <source src="https://html-tag-exploration.firebaseapp.com/videoplayback.mp4" type="video/mp4">
     </video></p>
+    
     <p> A cat meooowww</p>
     <p><audio controls preload autoplay loop>
         <source src="https://html-tag-exploration.firebaseapp.com/Cat_Meow.mp3" type="audio/mpeg">   
@@ -69,7 +70,7 @@
       <math>
         <mi>kitty</mi>
         <mo>=</mo>
-        <mfrac>
+        <mfrac>  <!--mfrac isn't resolving-->
           <mrow>
             <mi>daddy cat</mi>
             <mo>x</mo>
