@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <h1>Forms</h1>
-  <h4>Cat Name</h4>
-    <form method="get" accept-charset="character_set" name="catname-form" target="_parent" autocomplete="on">
-      Cat Name:<input type="text" name="catname" size="50" maxlength="30">
+    <form method="get" action="https://httpbin.org/get" accept-charset="character_set" name="catname-form" target="_blank" autocomplete="on" novalidate>
+      <fieldset>
+        <legend align="right">CAT NAME</legend>
+        Cat Name:<input type="text" name="catname" size="50" maxlength="30">
       <input type="submit" value="Enter"> 
+    </fieldset>
     </form>
 <br>
-  <h4>Stuff About Your Cat</h4>
-  <form method="post" name="catinfo-form" target="_self" enctype="application/x-www-form-urlencoded">
-      Cat Breed:<input type="text" name="breed" autocomplete="on" form="catname-form" formmethod="get" placeholder="Cat Breed"><br>
-      Cat Age:<input type="number" name="age" max="50" form="catinfo-form"><br>
-      Cat Birthday:<input type="date" name="bday" max="2017-10-22"><br> <!-- fix max -->
-      Upload Image of Cat:<imput type="image" accept="jpg" name="catimg"><br>
-      Are you a cat?<input type="checkbox" required="required"><br>
-      How many cats do you want to have?<input type="number" min="100" value="100"><br>
-      Would you rather have a cat or a dog? <input type="text" value="cat" readonly><br>
-      Do you love your cat?<br>
-        <input id="cat-yes" type="checkbox" checked="checked">
+  <form method="post" name="catinfo-form" target="_self" enctype="application/x-www-form-urlencoded" accept="image/jpeg" action="https://httpbin.org/post">
+      <fieldset>
+        <legend align="top">ABOUT CATS</legend>
+        <p>Form progress:<progress value="0" max="100"></progress></p><br>
+        Cat Breed:<input type="text" name="breed" autocomplete="on" form="catname-form" formmethod="get" placeholder="Cat Breed" minlength="2"><br>
+        Cat Age:<input type="number" name="age" max="50" form="catinfo-form"><br>
+        Cat Birthday:<input type="date" name="bday" max="2017-10-22"><br> <!-- fix max -->
+        Are you a cat?<input id="if-cat" type="checkbox" required="required">
+        <label for="if-cat">YEAH</label><br>
+        How many cats do you want to have?<input type="number" min="100" value="100" form="catinfo-form"><br>
+        Would you rather have a cat or a dog? <input type="text" value="cat" readonly form="catinfo-form"><br>
+        Do you love your cat?<br>
+        <input id="cat-yes" type="checkbox" checked="checked" form="catinfo-form">
         <label for="cat-yes" form="catinfo-form">Yes</label><br>
-        <input id="cat-no" type="checkbox">
+        <input id="cat-no" type="checkbox" form="catinfo-form">
         <label for="cat-no" form="catinfo-form">No<label><br>
-      Do you REALLY love your cat?<br>
-        <input id="cat-radio-yes" type="radio" name="cat-radio">
+        Do you REALLY love your cat?<br>
+        <input id="cat-radio-yes" type="radio" name="cat-radio" form="catinfo-form">
         <label for="cat-radio-yes" form="catinfo-form">REALLY yes</label>
-        <input id="cat-radio-no" type="radio" name="cat-radio">
+        <input id="cat-radio-no" type="radio" name="cat-radio" form="catinfo-form">
         <label for="cat-radio-no" form="catinfo-form">REALLY still yes</label><br>
-    Dog name:<input type="text"  disabled="disabled"><br>
-    Is this cat cute?<br>
-      <img src="img/funnycat.jpg"><br>
-      <select size="4" name="catcute" required="required" form="catinfo-form">
-        <option value="yes" selected>duh</option>
-        <option value="no" disabled>ew</option>
-        <option values="dogs" label="i luv dogs">cats just really aren't my thing</option>
-        <option value="maybe">idk</option>
-        <option value="decline">no comment</option>
-      </select><br>
-      Why do you love your cat?<br>
-        <textarea form="catinfo-form" cols="100" rows="10" placeholder="I really love when my cat scrathes my furniture"> </textarea><br>
-      What do you hate about your cat?<br>
+        Dog name:<input type="text" placeholder="NO DOGES ALLOWED" disabled="disabled"><br>
+        Is this cat cute?<br>
+        <img src="http://img06.tooopen.com/images/20170817/tooopen_sl_220812875641.jpg" alt="greycat"><br>
+        <select size="4" name="catcute" required="required" form="catinfo-form" multiple>
+          <option value="yes" selected>duh</option>
+          <option value="no" disabled>ew</option>
+          <option values="dogs" label="i luv dogs">cats just really aren't my thing</option>
+          <option value="maybe">idk</option>
+          <option value="decline">no comment</option>
+        </select><br>
+        Cat cuteness meter:<br>
+        <img src="https://imgfast.net/users/1314/42/58/80/avatars/353-73.jpg" alt="kitten"><br>
+        TOTALLY CUTE:<meter value="9" max="10" min="0"></meter><br>
+        NOT CUTE:<meter value=".1"></meter><br>
+        Why do you love your cat?<br>
+        <textarea form="catinfo-form" cols="100" rows="10" wrap="soft"> </textarea><br>
+        What do you hate about your cat?<br>
         <textarea form="catinfo-form" cols="100" rows="10" placeholder="Nothing" readonly></textarea><br>
-
-
+        Spell cat or dog:
+        <input type="text" pattern="[A-Za-z]{3}" title="cat or dog"><br>
+        Enter an even number of cats you want to have: <input type="number" step="2" name="numcats"><br>
+      </fieldset>
  
-    <button type="submit" value="Submit">Submit</button>
-    <button type="button">MEOW</button>
-    <button type="reset" name="resetbutton">Clear</button>
-    <button type="button" disabled>WOOF</button>
-
+        <button type="submit" value="Submit">Submit</button>
+        <button type="button">MEOW</button>
+        <button type="reset" name="resetbutton">Clear</button>
+        <button type="button" disabled>WOOF</button>
   </form>
-  <form>
+  <form method="get" action="https://httpbin.org/get" name="stuffs">
     <fieldset>
       <legend>Cat stuff</legend>
-      Name: <input type="text"><br>
+      Name: <input type="text" form="stuffs"><br>
       Breed: <input list="breedsList">
       <datalist id="breedsList">
-        <option>Main coon</option>
+        <option>Maine coon</option>
         <option>British shorthair</option>
         <option>Siamese</option>
       </datalist>
     </fieldset>
+    <button type="submit" value="Submit">SUBMIT</button>
+  </form>
+  <form method="get" action="https://httpbin.org/get">
     <fieldset>
       <legend>Other cat stuff</legend>
       Favorite cat food: 
       <select>
         <optgroup label="Wet Food">
-          <option>Fancy Feast</option>
+          <option value="Fancy Feast">Fancy Feast</option>
         </optgroup>
         <optgroup label="Dry Food">
-          <option>Pedigree</option>
+          <option value="Pedigree">Pedigree</option>
         </optgroup>
       </select> 
     </fieldset>
+    <input type="submit">
+  </form>
+  <form>
     <fieldset disabled>
       <legend>Dog stuff (disabled because not cats)</legend>
-      Doge: <input type="text">
+      Doge: <input type="text" >
       <select>
         <option value="nope">nope</option>
       </select>
@@ -82,11 +97,14 @@
     <input type="submit">
   </form>
 
-  <form onsubmit="return false" oninput="babycat.value = daddycat.value + mommycat.value">
-    Daddy cat:<input name="daddycat" type="text"> +
-    Mommy cat:<input name="mommycat" type="text"> = 
-    Baby cat:<output name="babycat" for="daddy-cat-name mommy-cat-name"></output>
+  <form method="get" action="https://httpbin.org/get" onsubmit="return false" oninput="babycat.value = daddycat.value + mommycat.value">
+    <fieldset>
+      <legend>FIND YOUR KITTEN NAME</legend>
+      Daddy cat:<input name="daddycat" type="text"> +
+      Mommy cat:<input name="mommycat" type="text"> = 
+      Baby cat:<output name="babycat" for="daddy-cat-name mommy-cat-name"></output>
+  </fieldset>
   </form>
 
-  
+
 </html>
