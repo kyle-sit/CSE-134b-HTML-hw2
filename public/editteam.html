@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<title>
-		Add New Team
+		Edit Team
 	</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -82,7 +82,7 @@
 			
 				<form action="#" class="form-horizontal" id="form" name="form">
 					<div class="logo">
-						<h1 style="white-space: nowrap;">Add Team</h1>
+						<h1 style="white-space: nowrap;">Edit Team</h1>
 					</div>
 					<div>
 						<img style="height: 75px; margin-top: -30px; margin-left: 40%; margin-bottom: 20px;" src="http://www.culturecraver.com/sites/default/files/styles/event_image_400/public/cc2014files/ui-images/empty_profile_image.png?itok=uS6giwT0" alt="profile" />
@@ -112,11 +112,24 @@
 					</div>
 					<br><br>
 					<div class="form-group in">
-						<input type="submit" class="btn btn info btn-block" value="Add Team" onclick="addTeam()">
+						<input type="submit" class="btn btn info btn-block" value="Edit Team" onclick="editTeam()">
 					</div>
 				</form>
 				<script>
-					function addTeam() {
+				
+					var oldteamname = sessionStorage.getItem("edit");
+					var oldvalues = JSON.parse(localStorage.getItem(oldteamname));
+					var oldcaptain = oldvalues[0];
+					var oldlevel = oldvalues[1];
+					var oldpicture = oldvalues[2];
+				
+					document.getElementById('teamname').value = oldteamname;
+					document.getElementById('captain').value = oldcaptain;
+					document.getElementById('level').value = oldlevel;
+					document.getElementById('picture').value = oldpicture;
+				
+					function editTeam() {
+						var teams = JSON.parse(localStorage.getItem("teams"));
 						var teamname = document.getElementById("teamname").value;
 						var captain = document.getElementById("captain").value;
 						var level = document.getElementById("level").value;
@@ -125,20 +138,22 @@
 							alert("Please enter all the fields.");
 						}
 						else {
-							var values = [captain, level, picture];
-							
-							if (localStorage.getItem("teams") === null) {
-								var a = [];
-								var emptyArray = JSON.stringify(a);
-								localStorage.setItem("teams", emptyArray);
+							// remove old team and add the new
+							localStorage.removeItem(oldteamname);
+							var index = teams.indexOf(oldteamname);
+							if (index > -1) {
+								teams.splice(index, 1);
 							}
 							
-							var teamArray = JSON.parse(localStorage.getItem("teams"));
-							teamArray = teamArray.concat([teamname]);
-							localStorage.setItem("teams", JSON.stringify(teamArray));
+							teams = teams.concat([teamname]);
+							localStorage.setItem("teams", JSON.stringify(teams));
+							
+							var values = [captain, level, picture];
 							
 							localStorage.setItem(teamname, JSON.stringify(values));
+							sessionStorage.clear();
 							document.getElementById("form").action = "teams.html";
+
 						}
 					}
 					
